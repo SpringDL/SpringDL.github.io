@@ -1,0 +1,45 @@
+﻿/*
+    Filename: main.css
+    Author: Danny Luk 300709186
+    Last Modified by: Danny Luk
+    Last Modified Date: 4 Mar. 2015
+    Description: This file styles index.html and centers everything
+*/
+
+body {
+    background-color:#fef9dd;
+}
+
+h1 {
+    text-align:center;
+}
+
+#centerEverything {
+    margin-left:auto;
+    margin-right:auto;
+    width:800px;
+}
+
+#BtnSpin {
+    width:264px;
+    height:116px;
+    position: absolute;
+    margin:160px 0 0 490px;
+    padding:0;
+}
+
+#BtnBetUp {
+    width:54px;
+    height:54px;
+    position: absolute;
+    margin:401px 0 0 590px;
+    padding:0;
+}
+
+#BtnBetDown {
+    width:54px;
+    height:54px;
+    position: absolute;
+    margin:401px 0 0 276px;
+    padding:0;
+}
