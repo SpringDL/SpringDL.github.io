@@ -59,6 +59,8 @@ var banana = 0;
 var gariPop = 0;
 var meat = 0;
 var django = 0;
+
+var isSpinning = false;
 //#endregion
 
 
@@ -346,18 +348,26 @@ function PayWinnings() {
 
     //Refresh Stats to Display Winnings
     UpdateStats();
+
+    //Allow player to Spin Reels
+    setTimeout(function () {
+        isSpinning = false;
+    }, 150);
 }
 
 
 //Click to Spin
 $("#BtnSpin").click(function () {
-    if (bet > money) {
-        alert("You don't have enough money to gamble. Either decrease the amount you're betting or get more money!");
-    } else {
-        money -= bet;               //Subract bet amount from money pool
-        jackpot += (bet * 0.50);    //Add 50% of the bet amount into the Jackpot pool
-        UpdateStats();
-        SpinReels();
+    if (!isSpinning) {
+        isSpinning = true;
+        if (bet > money) {
+            alert("You don't have enough money to gamble. Either decrease the amount you're betting or get more money!");
+        } else {
+            money -= bet;               //Subract bet amount from money pool
+            jackpot += (bet * 0.50);    //Add 50% of the bet amount into the Jackpot pool
+            UpdateStats();
+            SpinReels();
+        }
     }
 });
 
